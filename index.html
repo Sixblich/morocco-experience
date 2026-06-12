@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🇲🇦 Discover Morocco</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ==================== LOADER ==================== -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-flag">🇲🇦</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <p class="loader-text">Loading Morocco Experience...</p>
+  </div>
+</div>
+
+<!-- ==================== MUSIC BUTTON ==================== -->
+<button id="musicBtn" class="music-btn" title="Toggle music">🔇</button>
+
+<!-- ==================== VISITOR COUNTER ==================== -->
+<div id="visitorCounter" class="visitor-counter">
+  <span>👁️</span> <span id="visitorNum">0</span> explorers today
+</div>
+
+<!-- ==================== SCREEN: HOME ==================== -->
+<section id="homeScreen" class="screen active">
+  <div class="home-bg">
+    <div class="home-overlay"></div>
+    <div class="geometric-pattern"></div>
+  </div>
+  <div class="home-content">
+    <div class="flag-badge animate-float">🇲🇦</div>
+    <h1 class="home-title">
+      <span class="welcome-text">Welcome to</span>
+      <span class="morocco-text">MOROCCO</span>
+    </h1>
+    <p class="home-subtitle">
+      Discover the culture, history, food and traditions of Morocco through interactive activities.
+    </p>
+    <div class="home-facts">
+      <span>🏜️ Sahara Desert</span>
+      <span>🕌 Ancient Medinas</span>
+      <span>🫖 Moroccan Mint Tea</span>
+    </div>
+    <button class="btn-start" onclick="showScreen('menuScreen')">
+      <span>Start the Adventure</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+  <div class="home-scroll-hint">▼ scroll or tap to begin</div>
+</section>
+
+<!-- ==================== SCREEN: MENU ==================== -->
+<section id="menuScreen" class="screen">
+  <div class="section-header">
+    <button class="btn-back" onclick="showScreen('homeScreen')">← Home</button>
+    <h2>Choose Your Experience</h2>
+    <p>What would you like to explore?</p>
+  </div>
+  <div class="menu-grid">
+
+    <div class="menu-card" onclick="showScreen('learnScreen')">
+      <div class="card-icon">📚</div>
+      <div class="card-glow"></div>
+      <h3>Learn about Morocco</h3>
+      <p>Culture, history, cities, food & traditions</p>
+      <span class="card-arrow">→</span>
+    </div>
+
+    <div class="menu-card" onclick="showScreen('mapScreen')">
+      <div class="card-icon">🗺️</div>
+      <div class="card-glow"></div>
+      <h3>Interactive Map</h3>
+      <p>Explore Morocco's most iconic cities</p>
+      <span class="card-arrow">→</span>
+    </div>
+
+    <div class="menu-card" onclick="showScreen('quizScreen'); startQuiz()">
+      <div class="card-icon">🎮</div>
+      <div class="card-glow"></div>
+      <h3>Morocco Quiz</h3>
+      <p>Test your knowledge — 10 fun questions!</p>
+      <span class="card-arrow">→</span>
+    </div>
+
+    <div class="menu-card" onclick="showScreen('certScreen')">
+      <div class="card-icon">🏆</div>
+      <div class="card-glow"></div>
+      <h3>Get Your Certificate</h3>
+      <p>Print your Explorer Certificate</p>
+      <span class="card-arrow">→</span>
+    </div>
+
+    <div class="menu-card" onclick="showScreen('rankScreen')">
+      <div class="card-icon">🏅</div>
+      <div class="card-glow"></div>
+      <h3>Leaderboard</h3>
+      <p>Top Morocco Explorers ranking</p>
+      <span class="card-arrow">→</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== SCREEN: LEARN ==================== -->
+<section id="learnScreen" class="screen">
+  <div class="section-header">
+    <button class="btn-back" onclick="showScreen('menuScreen')">← Menu</button>
+    <h2>📚 Learn about Morocco</h2>
+    <p>Fascinating facts about the Kingdom of Morocco</p>
+  </div>
+
+  <!-- Quick Facts -->
+  <div class="facts-strip">
+    <div class="fact-pill">🏛️ Capital: Rabat</div>
+    <div class="fact-pill">🌆 Largest City: Casablanca</div>
+    <div class="fact-pill">🗣️ Arabic & Amazigh</div>
+    <div class="fact-pill">💰 Moroccan Dirham</div>
+    <div class="fact-pill">🌍 Africa</div>
+    <div class="fact-pill">👑 Constitutional Monarchy</div>
+  </div>
+
+  <!-- Photo Gallery -->
+  <div class="learn-section">
+    <h3 class="section-title">🏙️ Iconic Places</h3>
+    <div class="places-grid">
+
+      <div class="place-card">
+        <div class="place-img" style="background: linear-gradient(135deg, #C1272D 0%, #8B0000 100%);">
+          <div class="place-emoji">🌅</div>
+        </div>
+        <div class="place-info">
+          <h4>Sahara Desert</h4>
+          <p>The world's largest hot desert stretches across southern Morocco with magnificent golden dunes reaching up to 180 meters high.</p>
+          <span class="place-tag">⭐ Must See</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-img" style="background: linear-gradient(135deg, #D4AF37 0%, #8B6914 100%);">
+          <div class="place-emoji">🕌</div>
+        </div>
+        <div class="place-info">
+          <h4>Marrakech</h4>
+          <p>Known as the "Red City," Marrakech dazzles with its vibrant souks, the famous Jemaa el-Fnaa square, and stunning palaces.</p>
+          <span class="place-tag">🌟 Most Visited</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-img" style="background: linear-gradient(135deg, #4169E1 0%, #1a3a8a 100%);">
+          <div class="place-emoji">💙</div>
+        </div>
+        <div class="place-info">
+          <h4>Chefchaouen</h4>
+          <p>The magical "Blue Pearl" — a mountain town where every street, wall and staircase is painted in breathtaking shades of blue.</p>
+          <span class="place-tag">📸 Most Instagrammed</span>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-img" style="background: linear-gradient(135deg, #006233 0%, #003d1f 100%);">
+          <div class="place-emoji">🕋</div>
+        </div>
+        <div class="place-info">
+          <h4>Hassan II Mosque</h4>
+          <p>One of the largest mosques in the world, located in Casablanca. Its minaret stands 210 meters tall — the tallest religious structure on Earth.</p>
+          <span class="place-tag">🌍 World Record</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Food Section -->
+  <div class="learn-section">
+    <h3 class="section-title">🍽️ Moroccan Cuisine</h3>
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-emoji">🫕</div>
+        <h4>Tagine</h4>
+        <p>A slow-cooked stew made in a conical clay pot. Packed with spices, vegetables, and meat or chicken.</p>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🍚</div>
+        <h4>Couscous</h4>
+        <p>Morocco's national dish — steamed semolina served with vegetables and meat, traditionally eaten on Fridays.</p>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🫖</div>
+        <h4>Mint Tea</h4>
+        <p>The famous "Moroccan whiskey" — sweet green tea with fresh mint leaves, poured from a height to create foam.</p>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">🥐</div>
+        <h4>Pastilla</h4>
+        <p>A unique sweet-savory pie made of thin pastry filled with pigeon or chicken, almonds, eggs, and cinnamon.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Culture Section -->
+  <div class="learn-section">
+    <h3 class="section-title">🎨 Culture & Traditions</h3>
+    <div class="culture-list">
+      <div class="culture-item">
+        <span class="culture-icon">🎭</span>
+        <div>
+          <strong>Henna Art</strong>
+          <p>Intricate temporary body art used in celebrations and weddings</p>
+        </div>
+      </div>
+      <div class="culture-item">
+        <span class="culture-icon">🪔</span>
+        <div>
+          <strong>Moroccan Lanterns</strong>
+          <p>Handcrafted metal and glass lanterns that fill streets with warm, colorful light</p>
+        </div>
+      </div>
+      <div class="culture-item">
+        <span class="culture-icon">🎶</span>
+        <div>
+          <strong>Gnawa Music</strong>
+          <p>Ancient spiritual music recognized by UNESCO as Intangible Cultural Heritage</p>
+        </div>
+      </div>
+      <div class="culture-item">
+        <span class="culture-icon">🛒</span>
+        <div>
+          <strong>Souks (Markets)</strong>
+          <p>Labyrinthine markets bursting with spices, textiles, ceramics, and leather goods</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="center-btn">
+    <button class="btn-primary" onclick="showScreen('menuScreen')">← Back to Menu</button>
+  </div>
+</section>
+
+<!-- ==================== SCREEN: MAP ==================== -->
+<section id="mapScreen" class="screen">
+  <div class="section-header">
+    <button class="btn-back" onclick="showScreen('menuScreen')">← Menu</button>
+    <h2>🗺️ Interactive Map</h2>
+    <p>Tap a city to discover its secrets</p>
+  </div>
+
+  <div class="map-container">
+    <svg id="moroccoMap" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- Morocco shape (simplified outline) -->
+      <defs>
+        <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1a472a;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#006233;stop-opacity:1" />
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <!-- Morocco territory -->
+      <path class="map-country" d="
+        M 80,30 L 200,20 L 320,10 L 400,30 L 430,60 L 450,100 L 460,150 L 450,200
+        L 440,250 L 430,300 L 420,350 L 400,390 L 370,400 L 340,390 L 300,380
+        L 260,370 L 220,360 L 180,370 L 140,380 L 110,360 L 90,320 L 70,280
+        L 60,240 L 50,200 L 40,160 L 30,120 L 50,80 Z
+      " fill="url(#mapGrad)" stroke="#D4AF37" stroke-width="2"/>
+
+      <!-- Desert texture -->
+      <path d="M 200,280 Q 300,260 420,310 L 420,390 L 140,380 Z" fill="#C8A84B" opacity="0.3"/>
+
+      <!-- Atlas Mountains hint -->
+      <path d="M 100,180 L 180,140 L 260,160 L 300,150 L 360,170" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+      <text x="190" y="135" fill="#D4AF37" font-size="9" opacity="0.7">Atlas Mountains</text>
+
+      <!-- Mediterranean coast label -->
+      <text x="170" y="18" fill="#87CEEB" font-size="9" opacity="0.8">Mediterranean Sea</text>
+      <!-- Atlantic coast label -->
+      <text x="15" y="220" fill="#87CEEB" font-size="8" opacity="0.8" transform="rotate(-90, 15, 220)">Atlantic Ocean</text>
+
+      <!-- CITY: Rabat -->
+      <g class="city-pin" onclick="showCityInfo('rabat')" transform="translate(105,110)">
+        <circle class="city-pulse" r="18" fill="#C1272D" opacity="0.2"/>
+        <circle r="10" fill="#C1272D" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+        <text y="4" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">★</text>
+        <text y="26" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">Rabat</text>
+        <text y="37" text-anchor="middle" fill="#D4AF37" font-size="8">Capital</text>
+      </g>
+
+      <!-- CITY: Casablanca -->
+      <g class="city-pin" onclick="showCityInfo('casablanca')" transform="translate(90,165)">
+        <circle class="city-pulse" r="18" fill="#D4AF37" opacity="0.2"/>
+        <circle r="9" fill="#D4AF37" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+        <text y="4" text-anchor="middle" fill="#006233" font-size="9" font-weight="bold">🕌</text>
+        <text y="26" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">Casablanca</text>
+      </g>
+
+      <!-- CITY: Marrakech -->
+      <g class="city-pin" onclick="showCityInfo('marrakech')" transform="translate(185,240)">
+        <circle class="city-pulse" r="18" fill="#C1272D" opacity="0.2"/>
+        <circle r="9" fill="#C1272D" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+        <text y="4" text-anchor="middle" fill="#fff" font-size="9">🌴</text>
+        <text y="25" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">Marrakech</text>
+      </g>
+
+      <!-- CITY: Fez -->
+      <g class="city-pin" onclick="showCityInfo('fez')" transform="translate(250,130)">
+        <circle class="city-pulse" r="18" fill="#D4AF37" opacity="0.2"/>
+        <circle r="9" fill="#D4AF37" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+        <text y="4" text-anchor="middle" fill="#006233" font-size="9">🏛️</text>
+        <text y="25" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">Fez</text>
+      </g>
+
+      <!-- CITY: Chefchaouen -->
+      <g class="city-pin" onclick="showCityInfo('chefchaouen')" transform="translate(175,65)">
+        <circle class="city-pulse" r="18" fill="#4169E1" opacity="0.2"/>
+        <circle r="9" fill="#4169E1" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+        <text y="4" text-anchor="middle" fill="#fff" font-size="9">💙</text>
+        <text y="25" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">Chefchaouen</text>
+      </g>
+
+      <!-- CITY: Merzouga (Sahara) -->
+      <g class="city-pin" onclick="showCityInfo('merzouga')" transform="translate(330,310)">
+        <circle class="city-pulse" r="18" fill="#C8A84B" opacity="0.3"/>
+        <circle r="9" fill="#C8A84B" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+        <text y="4" text-anchor="middle" fill="#5a3e00" font-size="9">🏜️</text>
+        <text y="25" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">Merzouga</text>
+        <text y="36" text-anchor="middle" fill="#D4AF37" font-size="7">Sahara</text>
+      </g>
+
+    </svg>
+  </div>
+
+  <!-- City Info Popup -->
+  <div id="cityPopup" class="city-popup hidden">
+    <button class="popup-close" onclick="closeCityPopup()">✕</button>
+    <div class="popup-icon" id="popupIcon"></div>
+    <h3 id="popupCity"></h3>
+    <p id="popupDesc"></p>
+    <div class="popup-fact">
+      <span>💡</span>
+      <span id="popupFact"></span>
+    </div>
+  </div>
+  <div id="popupOverlay" class="popup-overlay hidden" onclick="closeCityPopup()"></div>
+</section>
+
+<!-- ==================== SCREEN: QUIZ ==================== -->
+<section id="quizScreen" class="screen">
+  <div class="section-header">
+    <button class="btn-back" onclick="showScreen('menuScreen'); resetQuiz()">← Menu</button>
+    <h2>🎮 Morocco Quiz</h2>
+    <p>Test your knowledge!</p>
+  </div>
+
+  <div id="quizBox">
+    <div class="quiz-progress">
+      <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+      <span id="questionCount">Question 1 of 10</span>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-score-badge">Score: <span id="liveScore">0</span></div>
+      <h3 id="questionText" class="question-text"></h3>
+      <div id="optionsContainer" class="options-grid"></div>
+    </div>
+  </div>
+
+  <!-- Quiz Results -->
+  <div id="quizResults" class="hidden">
+    <div class="results-card">
+      <div class="results-emoji" id="resultsEmoji"></div>
+      <h2 id="resultsTitle"></h2>
+      <div class="score-display">
+        <span id="finalScore" class="big-score"></span>
+        <span class="score-denom">/10</span>
+      </div>
+      <p id="resultsMsg"></p>
+      <div class="rank-badge" id="rankBadge"></div>
+
+      <!-- QR Code -->
+      <div class="qr-section">
+        <p>📱 Scan to learn more about Morocco!</p>
+        <div id="qrCode" class="qr-placeholder"></div>
+        <p class="qr-hint">Points to: visitmorocco.com</p>
+      </div>
+
+      <div class="results-actions">
+        <button class="btn-primary" onclick="saveScore()">💾 Save to Leaderboard</button>
+        <button class="btn-secondary" onclick="resetQuiz(); startQuiz()">🔄 Play Again</button>
+        <button class="btn-ghost" onclick="showScreen('certScreen')">🏆 Get Certificate</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SCREEN: CERTIFICATE ==================== -->
+<section id="certScreen" class="screen">
+  <div class="section-header">
+    <button class="btn-back" onclick="showScreen('menuScreen')">← Menu</button>
+    <h2>🏆 Your Certificate</h2>
+    <p>Enter your name to generate your certificate</p>
+  </div>
+
+  <div class="cert-form-wrapper">
+    <div class="cert-form">
+      <input type="text" id="certName" class="cert-input" placeholder="✍️ Enter your full name..." maxlength="50" />
+      <button class="btn-primary btn-large" onclick="generateCert()">🎓 Generate Certificate</button>
+    </div>
+  </div>
+
+  <!-- Certificate Display -->
+  <div id="certificateDisplay" class="cert-wrapper hidden">
+    <div class="certificate" id="certPrintArea">
+      <div class="cert-border"></div>
+      <div class="cert-content">
+        <div class="cert-header">
+          <span class="cert-flag">🇲🇦</span>
+          <div class="cert-stars">✦ ✦ ✦</div>
+        </div>
+        <p class="cert-subtitle">Certificate of Exploration</p>
+        <div class="cert-divider"></div>
+        <p class="cert-presents">This certifies that</p>
+        <h2 class="cert-name" id="certNameDisplay"></h2>
+        <p class="cert-body">
+          has successfully completed the<br>
+          <strong>Morocco Interactive Experience</strong><br>
+          and is hereby recognized as an official
+        </p>
+        <div class="cert-title-badge">Morocco Explorer</div>
+        <div class="cert-divider"></div>
+        <div class="cert-footer">
+          <div class="cert-date">
+            <span id="certDate"></span>
+            <small>Date of Completion</small>
+          </div>
+          <div class="cert-seal">🇲🇦</div>
+          <div class="cert-sign">
+            <span>Open House English</span>
+            <small>Signature</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cert-actions">
+      <button class="btn-primary" onclick="printCert()">🖨️ Print Certificate</button>
+      <button class="btn-ghost" onclick="showScreen('menuScreen')">← Back to Menu</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SCREEN: LEADERBOARD ==================== -->
+<section id="rankScreen" class="screen">
+  <div class="section-header">
+    <button class="btn-back" onclick="showScreen('menuScreen')">← Menu</button>
+    <h2>🏅 Leaderboard</h2>
+    <p>Top Morocco Explorers</p>
+  </div>
+
+  <div class="leaderboard-wrapper">
+    <div id="rankList" class="rank-list"></div>
+    <div id="emptyRank" class="empty-rank hidden">
+      <p>🏜️ No explorers yet!</p>
+      <p>Take the quiz and be the first!</p>
+      <button class="btn-primary" onclick="showScreen('quizScreen'); startQuiz()">Take the Quiz</button>
+    </div>
+    <!--
+<div class="rank-actions">
+      <button class="btn-ghost btn-small" onclick="clearRanking()">🗑️ Clear Rankings</button>
+</div>
+-->
+  </div>
+</section>
+
+<!-- ==================== SAVE SCORE MODAL ==================== -->
+<div id="saveModal" class="modal hidden">
+  <div class="modal-box">
+    <h3>💾 Save Your Score</h3>
+    <p>Enter your name to appear on the leaderboard!</p>
+    <input type="text" id="playerName" class="cert-input" placeholder="Your name..." maxlength="30"/>
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="confirmSaveScore()">Save 🚀</button>
+      <button class="btn-ghost" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+<div id="modalOverlay" class="popup-overlay hidden" onclick="closeModal()"></div>
+
+<!-- ==================== CONFETTI CANVAS ==================== -->
+<canvas id="confettiCanvas"></canvas>
+
+<!-- Audio (silent placeholder — user can add real file) -->
+<audio id="bgMusic" loop>
+  <source src="assets/sounds/music.mp3" type="audio/mpeg" />
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
