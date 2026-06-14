@@ -106,6 +106,31 @@ if(musicBtn && bgMusic){
 
 }
 
+//-------------------------------
+// INICIAR MÚSICA EN EL PRIMER CLIC
+//-------------------------------
+
+document.addEventListener(
+
+"click",
+
+function(){
+
+    if(bgMusic && bgMusic.paused){
+
+        bgMusic.play().catch(()=>{});
+
+        musicBtn.innerHTML="🔊";
+
+        musicPlaying=true;
+
+    }
+
+},
+
+{once:true}
+
+);
 
 
 //-------------------------------
