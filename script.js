@@ -44,6 +44,8 @@ window.addEventListener("load", function(){
 
 function showScreen(screenId){
 
+    console.log("showScreen() llamado con:", screenId);
+
     screens.forEach(function(screen){
 
         screen.classList.remove("active");
@@ -53,17 +55,18 @@ function showScreen(screenId){
     const selected =
     document.getElementById(screenId);
 
+    console.log("Elemento encontrado para", screenId, ":", selected);
+
     if(selected){
 
         selected.classList.add("active");
 
+    } else {
+
+        console.error("¡NO SE ENCONTRÓ el elemento con id:", screenId, "! Revisa que el HTML tenga ese id exacto.");
+
     }
 
-    // Esperamos a que el navegador termine de aplicar
-    // el cambio de pantalla (display none/block) ANTES
-    // de mover el scroll. Si esto se hace al mismo tiempo,
-    // Safari/iOS (y a veces Chrome) puede "rebotar"
-    // visualmente hacia la pantalla anterior a mitad de camino.
     requestAnimationFrame(function(){
 
         window.scrollTo({
@@ -73,9 +76,15 @@ function showScreen(screenId){
 
         });
 
+        console.log("Pantalla activa ahora:", document.querySelector(".screen.active") ? document.querySelector(".screen.active").id : "NINGUNA");
+
     });
 
 }
+
+window.addEventListener("error", function(e){
+    console.error("ERROR GLOBAL CAPTURADO:", e.message, "en", e.filename, "línea", e.lineno);
+});
 
 
 
