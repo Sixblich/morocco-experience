@@ -59,10 +59,19 @@ function showScreen(screenId){
 
     }
 
-    window.scrollTo({
+    // Esperamos a que el navegador termine de aplicar
+    // el cambio de pantalla (display none/block) ANTES
+    // de mover el scroll. Si esto se hace al mismo tiempo,
+    // Safari/iOS (y a veces Chrome) puede "rebotar"
+    // visualmente hacia la pantalla anterior a mitad de camino.
+    requestAnimationFrame(function(){
 
-        top:0,
-        behavior:"smooth"
+        window.scrollTo({
+
+            top:0,
+            behavior:"auto"
+
+        });
 
     });
 
